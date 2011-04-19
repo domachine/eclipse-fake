@@ -58,7 +58,7 @@ EOF
 PROJECT_DIR=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"|head -n1)
 
 test -d "$PROJECT_DIR" || {
-    echo "Project-dir is not a directory" ; exit 1
+    echo "Project-dir is not a directory" >&2 ; exit 1
 }
 
 PROJECT_DIR=$(cd "$PROJECT_DIR" && pwd)
