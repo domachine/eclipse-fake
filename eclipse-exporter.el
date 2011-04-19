@@ -3,14 +3,13 @@
 
 (defvar eclipse-exporter-program
   nil
-  "The path to eclipse exporter program.")
+  "The path to the eclipse exporter program.")
 
 (setq eclipse-exporter-program (expand-file-name "~/Workspace/eclipse-fake/eclipse-fake.sh"))
 
 ;;;###autoload
 (defun eclipse-export-project (path)
   (interactive "fProject-dir: ")
-  (setq path (expand-file-name path))
   (let* ((program-path eclipse-exporter-program)
          (path (expand-file-name path))
          (output-buffer (get-buffer-create "*Async Shell Command*"))
