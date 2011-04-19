@@ -55,8 +55,12 @@ org.eclipse.jdt.core.compiler.source=1.6
 EOF
 }
 
-
 PROJECT_DIR=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"|head -n1)
+
+test -d "$PROJECT_DIR" || {
+    echo "Project-dir is not a directory" ; exit 1
+}
+
 PROJECT_DIR=$(cd "$PROJECT_DIR" && pwd)
 PROJECT_NAME=$(expr "$PROJECT_DIR" : '.*/\([A-Za-z0-9_\-][A-Za-z0-9_\-]*\)')
 PROJECT_LOCATION=$(expr "$PROJECT_DIR" : '\(.*\)/[A-Za-z0-9_\-][A-Za-z0-9_\-]*')
@@ -64,7 +68,7 @@ PROJECT_LOCATION=$(expr "$PROJECT_DIR" : '\(.*\)/[A-Za-z0-9_\-][A-Za-z0-9_\-]*')
 echo $PROJECT_LOCATION
 
 cd "$PROJECT_DIR" || {
-    echo "Failed to change directory"; exit 1
+    echo "Failed to change directory" >&2 ; exit 1
 }
 
 generate_project "$PROJECT_NAME"
