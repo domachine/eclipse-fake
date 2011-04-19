@@ -1,2 +1,22 @@
 
+Tue, 19 Apr 2011 21:25:51 +0200 -- Added Emacs bindings
+
+I've written some Emacs bindings to provide easy control of the tool just out
+of Emacs.
+
+Installation:
+
+1. Simply copy the file somewhere Emacs can find it and put the following into
+   your .emacs file:
+
+   ;; #Elisp snippet
+   (setq eclipse-exporter-program
+         (expand-file-name "/path/to/eclipse-fake.sh"))
+
+   (autoload 'eclipse-export-project "eclipse-exporter"
+     "The eclipse exportation binding function" "sProject-dir: ")
+   ;; #End of Elisp snippet
+
+2. Now you can use it with `M-x eclipse-export-project <RET> /path/to/your/project <RET>'
+
 I wish all students of the university of ULM in the lecture damn f..................... "Programmierung von Systemen" much fun.
