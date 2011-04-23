@@ -10,12 +10,13 @@ $ ./eclipse-fake.sh /path/to/project
 Eclipse-fake is now configurable through config file in $HOME called
 `.eclipse-fake-rc'. The following variables can be set:
 
+#+BEGIN_SRC bash
 # VARIABLE=default_value
 
-- ECLIPSE_JAVA_VERSION=1.6  # Set the used java version
-- ECLIPSE_SRC_DIR=src       # Set the source dir name
-- ECLIPSE_OUTPUT_DIR=bin    # Set the output dir name
-
+ECLIPSE_JAVA_VERSION=1.6  # Set the used java version
+ECLIPSE_SRC_DIR=src       # Set the source dir name
+ECLIPSE_OUTPUT_DIR=bin    # Set the output dir name
+#+END_SRC
 
 ** Tue, 19 Apr 2011 21:25:51 +0200 -- Added Emacs bindings
 
@@ -27,6 +28,7 @@ _Installation_:
   1. Simply copy the file somewhere Emacs can find it and put the following into
      your .emacs file:
 
+     #+BEGIN_SRC emacs-lisp
      ;; #Elisp snippet
      (setq eclipse-exporter-program
            (expand-file-name "/path/to/eclipse-fake.sh"))
@@ -34,7 +36,7 @@ _Installation_:
      (autoload 'eclipse-export-project "eclipse-exporter"
        "The eclipse exportation binding function" "sProject-dir: ")
      ;; #End of Elisp snippet
-
+     #+END_SRC
   2. Now you can use it with `M-x eclipse-export-project <RET> /path/to/your/project <RET>'
 
 I wish all students of the university of ULM in the lecture damn f..................... "Programmierung von Systemen" much fun.
