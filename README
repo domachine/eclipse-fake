@@ -1,4 +1,16 @@
 
+Sat, 23 Apr 2011 23:42:05 +0200 -- Added configuration possibility
+
+Eclipse-fake is now configurable through config file in $HOME called
+`.eclipse-fake-rc'. The following variables can be set:
+
+# VARIABLE=default_value
+
+ECLIPSE_JAVA_VERSION=1.6  # Set the used java version
+ECLIPSE_SRC_DIR=src       # Set the source dir name
+ECLIPSE_OUTPUT_DIR=bin    # Set the output dir name
+
+
 Tue, 19 Apr 2011 21:25:51 +0200 -- Added Emacs bindings
 
 I've written some Emacs bindings to provide easy control of the tool just out
