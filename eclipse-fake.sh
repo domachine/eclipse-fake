@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Override these variables in ~/.eclipse-fake-rc
+ECLIPSE_JAVA_VERSION=1.6
+ECLIPSE_SRC_DIR=src
+ECLIPSE_OUTPUT_DIR=bin
+
+test -f ~/.eclipse-fake-rc && source ~/.eclipse-fake-rc
 
 generate_project()
 {
@@ -29,9 +35,9 @@ generate_classpath()
     cat > .classpath <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="${ECLIPSE_SRC_DIR}"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="output" path="${ECLIPSE_OUTPUT_DIR}"/>
 </classpath>
 EOF
 }
@@ -43,7 +49,7 @@ generate_settings_folder()
 #$(date)
 eclipse.preferences.version=1
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
-org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.6
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=${ECLIPSE_JAVA_VERSION}
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
 org.eclipse.jdt.core.compiler.compliance=1.6
 org.eclipse.jdt.core.compiler.debug.lineNumber=generate
@@ -51,7 +57,7 @@ org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.debug.sourceFile=generate
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
-org.eclipse.jdt.core.compiler.source=1.6
+org.eclipse.jdt.core.compiler.source=${ECLIPSE_JAVA_VERSION}
 EOF
 }
 
