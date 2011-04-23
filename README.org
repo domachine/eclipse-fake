@@ -25,7 +25,7 @@ of Emacs.
 
 _Installation_:
 
-  1. Simply copy the file somewhere Emacs can find it and put the following into
+  + Simply copy the file somewhere Emacs can find it and put the following into
      your .emacs file:
 
      #+BEGIN_SRC emacs-lisp
@@ -37,6 +37,6 @@ _Installation_:
        "The eclipse exportation binding function" "sProject-dir: ")
      ;; #End of Elisp snippet
      #+END_SRC
-  2. Now you can use it with `M-x eclipse-export-project <RET> /path/to/your/project <RET>'
+  + Now you can use it with `M-x eclipse-export-project <RET> /path/to/your/project <RET>'
 
 I wish all students of the university of ULM in the lecture damn f..................... "Programmierung von Systemen" much fun.
