@@ -89,7 +89,7 @@ generate_classpath
 generate_settings_folder
 
 cd "$PROJECT_LOCATION"
-test -f "$PROJECT_NAME.zip" || rm "$PROJECT_NAME.zip"
+test -f "$PROJECT_NAME.zip" && rm "$PROJECT_NAME.zip"
 
 echo "Zipping archive ..."
 find "$PROJECT_NAME" -name '*.prefs' \
